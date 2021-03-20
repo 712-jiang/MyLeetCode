@@ -132,6 +132,7 @@ void test(){
     res.add(obj.get(1));
     res.add(obj.get(3));
     res.add(obj.get(4));
+    res.add(obj.get(4));
     System.out.println(res);
     }
 }
