@@ -65,5 +65,6 @@ public class FullArray {
         res.add(objects);
         res.add(test);
         System.out.println(res.get(1).get(1));
+        String s = "dsdd";
     }
 }

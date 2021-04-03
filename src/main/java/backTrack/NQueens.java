@@ -82,7 +82,6 @@ public class NQueens {
 
     @Test
     void test(){
-        int a = new ArrayList<>(10).size();
-        System.out.println(a);
+
     }
 }
