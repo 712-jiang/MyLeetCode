@@ -8,52 +8,45 @@ import org.junit.jupiter.api.Test;
  * @create 2021-03-15-16:39
  */
 public class QuickSort {
-    private int[] input;
-    private int left=0;
-    private int right;
-    public void sort(int[] a){
-        input = new int[a.length];
-        right = a.length-1;
-        subsort(a, left, right);
+    public int[] sortArray(int[] nums) {
+        int left=0;
+        int right=nums.length-1;
+        subSort(nums,left,right);
+        return nums;
     }
-    public void subsort(int[] a, int left, int right){
+    void subSort(int[] nums, int left, int right){
+        //从上往下分到底，排序结束
         if(left>=right) return;
-        //先分割
-        int j = partition(a, left, right);
-        //再递归
-        subsort(a, left, j-1);
-        subsort(a, j+1, right);
+        //找分割点
+        int j = partPoint(nums,left,right);
+        //递归
+        subSort(nums,left,j-1);
+        subSort(nums,j+1,right);  //中间的j已经排好了，不应该再动
     }
-
-    public int partition(int[] a, int left, int right){
-        //设定i、j为左右指针，从两边往中间走
-        int i=left;
-        int j=right;
-        //选a[left]为baseline
-        //i j相遇了，结束
-        while(true) {
-            //当左边小于baseline，i++，继续向前
-            //这里=是必须的，不然i=left+1
-            while (a[i] <= a[left]) {
-                if (i == right) break;
+    int partPoint(int[] nums, int left, int right){
+        int i = left;
+        int j = right;
+        while(i<j){
+            //从左往右找到第一个比nums[left]大的数
+            while(nums[i]<=nums[left]){
+                if(i>=right) break;
                 i++;
             }
-            //当右边大于baseline，j--，继续向后
-            while (a[j] >= a[left]) {
-                if (j == left) break;
+            //从右往左找到第一个比nums[left]小的数
+            while(nums[j]>=nums[left]){
+                if(j<=left) break;
                 j--;
             }
-            //只有等i=j了才能跳出去,所以i和j必须相遇!!![秒啊]
-            if (i>=j) break;
-            //while的循环结束，找到一对放错位置的i和j
-            //交换
-            int temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            if (i>=j) break;   //当left是最小，i和j可能会跨过对方，此时不应该执行下面的交换
+            //i和j互换
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
         }
-        int cur = a[j];
-        a[j] = a[left];
-        a[left] = cur;
+        //以nums[left]为baseline的排序完成，将nums[left]放到i or j处（ij是同一个位置）
+        int mid = nums[j];
+        nums[j] = nums[left];
+        nums[left] = mid;
         return j;
     }
 
@@ -61,7 +54,7 @@ public class QuickSort {
     void test(){
         int[] input = new int[]{2,35,6,9,0,11,4,6,7,300};
         QuickSort test = new QuickSort();
-        test.sort(input);
+        test.sortArray(input);
         for (int i : input) {
             System.out.println(i);
         }
