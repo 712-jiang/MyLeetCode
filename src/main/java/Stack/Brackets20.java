@@ -11,6 +11,7 @@ import java.util.Stack;
  */
 public class Brackets20 {
     public boolean isValid(String s) {
+
         Map<String,Integer> map = new HashMap<>();
         Stack<Integer> st = new Stack<>();
         int size = s.length();
