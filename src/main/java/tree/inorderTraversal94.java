@@ -8,7 +8,7 @@ import java.util.List;
  * @function:94. 二叉树的中序遍历
  * @create 2021-02-18-22:18
  */
-public class leedcode94 {
+public class inorderTraversal94 {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         inorder(root, res);

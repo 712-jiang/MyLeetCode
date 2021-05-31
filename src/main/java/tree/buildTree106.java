@@ -8,7 +8,7 @@ import java.util.Map;
  * @function:106. 从中序与后序遍历序列构造二叉树
  * @create 2021-02-19-14:11
  */
-public class leedcode106 {
+public class buildTree106 {
     static Map<Integer, Integer> inmap = new HashMap<Integer, Integer>();
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         for(int i = 0; i<inorder.length; i++){
@@ -27,5 +27,4 @@ public class leedcode106 {
         root.right = build(inorder,index+1,inright, postorder, left_len+postleft, postright-1);
         return root;
     }
-
 }

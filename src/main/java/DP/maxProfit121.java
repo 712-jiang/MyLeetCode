@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * @author 712
  * @function: 121. 买卖股票的最佳时机
+ *  //卖出日期向前找最小值
  * @create 2021/4/13 15:56
  */
 public class maxProfit121 {

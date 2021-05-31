@@ -39,7 +39,7 @@ public class getIntersectionNode160 {
         System.out.println(sum);
     }
 }
-class ListNode {
+public class ListNode {
     int val;
     ListNode next;
     ListNode(int x) {

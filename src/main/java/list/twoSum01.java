@@ -6,6 +6,7 @@ import java.util.HashMap;
 /**
  * @author qingqing
  * @function:  两数之和：leedcode01
+ * 数组 nums 和目标值 target，在该数组中找出 和 为目标值 target的那两个整数，
  * @create 2021-04-10-22：10
  */
 public class twoSum01 {

@@ -22,16 +22,11 @@ public class threeSum15 {
     public List<List<Integer>> threeSum(int[] nums) {
         //排序
         Arrays.sort(nums);
-        //枚举第一个数 a
         for(int a=0;a<nums.length;a++){
-            //找到下一个不重复的数字
             if(a==0 || nums[a] !=nums[a-1]){
-                //a以前不用再看，重复的
                 int b=a+1;
                 int c=nums.length-1;
-                //b c相遇，枚举结束
                 while(b<c){
-                    //b的下一个重复就跳过
                     if(b>a+1 && nums[b] == nums[b-1]){
                         b++;
                         continue;
@@ -48,9 +43,7 @@ public class threeSum15 {
                         res.add(new ArrayList<Integer>(temp));
                         b++;
                     }
-                    //小了，b向前
                     else if(nums[a]+nums[b]+nums[c]<0) b++;
-                    //大了，c后退
                     else if(nums[a]+nums[b]+nums[c]>0) c--;
                 }
             }

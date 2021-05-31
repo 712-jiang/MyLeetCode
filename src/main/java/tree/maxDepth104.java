@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
  * @function:
  * @create 2021-02-22-21:33
  */
-public class leedcode104 {
+public class maxDepth104 {
     public int maxDepth(TreeNode root) {
         if (root == null){
             return 0;

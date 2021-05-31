@@ -6,10 +6,11 @@ import java.util.Stack;
 
 /**
  * @author qingqing
+ * 20. 有效的括号
  * @function:  括号合法性判断  leedcode 20,用压栈和出栈检验左右括号的合法性
  * @create 2021-04-03-22:26
  */
-public class Brackets20 {
+public class isValid20 {
     public boolean isValid(String s) {
 
         Map<String,Integer> map = new HashMap<>();

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class mergeSort {
     private int[] aue;
     private int l = 0;
+
     private int h;
 
     public void Sort(int[] a){
