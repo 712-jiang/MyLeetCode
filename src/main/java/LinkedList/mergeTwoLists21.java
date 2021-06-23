@@ -1,6 +1,5 @@
 package LinkedList;
 
-import list.ListNode;
 
 /**
  * @author 712
@@ -30,7 +29,7 @@ public class mergeTwoLists21 {
         return p.next;
     }
 
-    public class ListNode {
+    class ListNode {
         int val;
         ListNode next;
         ListNode() {}

@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 /**
  * @author qingqing
- * @function:
+ * @function:   归并排序  空间复杂度为N
  * @create 2021-03-13-11:04
  */
-public class mergeSort {
+public class mergeSort01 {
     private int[] aue;
     private int l = 0;
 
@@ -57,7 +57,7 @@ public class mergeSort {
 @Test
 void test(){
     int[] input = new int[]{2,35,6,9,0,11,4,6,7,300};
-    mergeSort test = new mergeSort();
+    mergeSort01 test = new mergeSort01();
     test.Sort(input);
     for (int i : input) {
         System.out.println(i);

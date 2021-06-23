@@ -16,6 +16,5 @@ public class LinkedHashMapTest {
         System.out.println(cache);
 
 
-
     }
 }

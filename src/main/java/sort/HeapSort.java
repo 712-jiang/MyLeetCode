@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 /**
  * @author 712
- * @function:
+ * @function:  大顶堆-排序结果从小到大
+ * 每次adjestHeap后，堆顶为最大值
  * @create 2021/5/10 9:43
  */
 public class HeapSort {
@@ -14,6 +15,7 @@ public class HeapSort {
         Sort(arr);
         System.out.println("排序后："+Arrays.toString(arr));
     }
+
     static void Sort(int[] arr){
         //第一遍，初始化大顶堆
         for(int i=arr.length/2-1;i>=0;i--){  //从最后一个非叶子节点开始比较
@@ -30,8 +32,8 @@ public class HeapSort {
 
     static void adjestHeap(int[] arr, int i, int len){
         int temp = arr[i];
-        for(int k=2*i+1;k<len;k++){
-            if(k+1<len && arr[k]<arr[k+1]){
+        for(int k=2*i+1;k<len;k++){   //遍历arr[i]所有叶子节点
+            if(k+1<len && arr[k]<arr[k+1]){   //max{左叶子，右叶子}-arr[k]确保为最大叶子节点
                 k++;
             }
             if(temp<arr[k]) {   //和temp比较，不要比arr[i]，因为过程中会改变
@@ -40,6 +42,6 @@ public class HeapSort {
             }
             else break;
         }
-        arr[i]=temp;
+        arr[i]=temp;  //大叶和root交换
     }
 }
